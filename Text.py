@@ -2,10 +2,12 @@ import PIL.Image
 import cv2
 import matplotlib.pyplot as plt
 import os
+import subprocess
 
 from google.genai import types
 from google import genai
 from dotenv import load_dotenv
+from pylatex import Document, Section
 
 load_dotenv(override=True)
 
@@ -41,4 +43,9 @@ response = client.models.generate_content(
     model="gemini-2.0-flash", contents=[prompt, organ], config=types.GenerateContentConfig(temperature=0, seed=5)
 )
 
-print(response.text)
+latex = response.text  # Assuming response.text contains valid LaTeX code
+
+
+with open("document.tex", "w") as f: # Save LaTeX code to a .tex file
+    f.write(latex)
+
