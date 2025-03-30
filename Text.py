@@ -9,6 +9,13 @@ from google import genai
 from dotenv import load_dotenv
 from pylatex import Document, Section
 
+def compile_latex_to_pdf(latex_file):
+    try:
+        subprocess.run(['pdflatex', latex_file], check=True)
+        print(f"{latex_file} compiled successfully into PDF.")
+    except subprocess.CalledProcessError:
+        print(f"Error compiling {latex_file}. Make sure pdflatex is installed.")
+
 load_dotenv(override=True)
 
 API_KEY = os.getenv("API_KEY")
@@ -20,7 +27,7 @@ options = {
     "temperature": 0.7
 }
 
-img = cv2.imread("Something.webp") # Read the image
+img = cv2.imread("Good/eng_AF_033.jpg") # Read the image
 
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) # Convert the image to grayscale
 
@@ -32,7 +39,7 @@ blurred = cv2.GaussianBlur(enhanced, (3, 3), 0)
 
 prompt = "Given the image, convert the image into latex code. Be sure to use math formating when needed"
 
-threshold_value = 155
+threshold_value = 115
 ret, binary = cv2.threshold(enhanced, threshold_value, 255, cv2.THRESH_BINARY)
 
 cv2.imwrite("Enhanced.jpg", binary) # Save the processed image
@@ -45,7 +52,11 @@ response = client.models.generate_content(
 
 latex = response.text  # Assuming response.text contains valid LaTeX code
 
+lines = latex.split("\n")
+latex = "\n".join(lines[1:-1])
 
+# print(latex)
 with open("document.tex", "w") as f: # Save LaTeX code to a .tex file
     f.write(latex)
-
+print(latex)
+# compile_latex_to_pdf("document.tex")

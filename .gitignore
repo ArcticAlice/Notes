@@ -5,3 +5,9 @@ Something.webp
 Enhanced.jpg
 something.ipynb
 document.tex
+*.png
+*.jpg
+venv
+train_images
+*.aux
+*.log
