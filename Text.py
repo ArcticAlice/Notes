@@ -67,5 +67,16 @@ def main():
     save_latex(latex_path, latex)
     compile_latex_to_pdf(latex_path)
 
+def image_to_latex(image_path, latex_path):
+    print("running")
+    image = read_image(image_path)
+    print("image came through")
+    latex = get_latex(image)
+    print("got the latex")
+    save_latex(latex_path, latex)
+    print("latex saved")
+    compile_latex_to_pdf(latex_path)
+    print("converted to pdf")
+
 if __name__ == "__main__":
     main()

@@ -11,3 +11,8 @@ venv
 train_images
 *.aux
 *.log
+__pycache__/
+Bad/
+Good/
+Mid/
+*.pdf
