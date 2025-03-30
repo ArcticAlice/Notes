@@ -10,4 +10,5 @@ https://www.anthropic.com/claude/sonnet claude sonnet
 https://ai.google.dev/gemini-api/docs/models/generative-models google gemini
 
 libraries 
-https://codesolid.com/using-latex-in-python/ pylatex
+https://jeltef.github.io/PyLaTeX/current/api.html pylatex
+https://pypi.org/project/google-generativeai/ gemini api

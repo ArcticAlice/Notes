@@ -16,3 +16,6 @@ Bad/
 Good/
 Mid/
 *.pdf
+build/
+dist/
+*.spec
