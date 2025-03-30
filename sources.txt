@@ -1,0 +1,13 @@
+https://learnopencv.com/handwritten-text-recognition-using-ocr/ Dataset and training your own ai
+https://www.geeksforgeeks.org/text-detection-and-extraction-using-opencv-and-ocr/# pytesseract
+https://www.nebo.app/ nebo (competitor app)
+
+ai research
+https://cloud.google.com/vision/docs/handwriting google vision
+https://aws.amazon.com/textract/pricing/ aws textract
+https://azure.microsoft.com/en-us/products/ai-services/ai-vision microsoft azure 
+https://www.anthropic.com/claude/sonnet claude sonnet
+https://ai.google.dev/gemini-api/docs/models/generative-models google gemini
+
+libraries 
+https://codesolid.com/using-latex-in-python/ pylatex
